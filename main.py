@@ -7,7 +7,8 @@ def show_menu():
     print("2. Vazifalarni ko'rish")
     print("3. Vazifani bajarilgan deb belgilash")
     print("4. Vazifani o'chirish")
-    print("5. Chiqish")
+    print("5. Vazifani tahrirlash")
+    print("6. Chiqish")
 
 
 def main():
@@ -49,6 +50,15 @@ def main():
                 print("Raqam kiriting.")
 
         elif choice == "5":
+            task_id = input("Vazifa raqami: ").strip()
+            new_title = input("Yangi nom: ").strip()
+            if task_id.isdigit() and new_title:
+                db.update_task(int(task_id), new_title)
+                print("Yangilandi.")
+            else:
+                print("Raqam va yangi nom kiriting.")
+
+        elif choice == "6":
             print("Xayr!")
             break
 

@@ -67,3 +67,12 @@ def delete_task(task_id):
     conn.commit()
     cursor.close()
     conn.close()
+
+
+def update_task(task_id, new_title):
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("UPDATE tasks SET title = %s WHERE id = %s", (new_title, task_id))
+    conn.commit()
+    cursor.close()
+    conn.close()
