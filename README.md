@@ -8,6 +8,7 @@ A simple console task manager built with Python and MySQL.
 - List all tasks
 - Mark tasks as done
 - Delete tasks
+- Edit tasks
 
 ## Tech Stack
 
